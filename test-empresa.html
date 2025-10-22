@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagnóstico de Transformación Digital e IA - Empresas</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: #f5f7fa;
+            min-height: 100vh;
+            padding: 20px;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            color: #ffffff;
+            padding: 50px 40px;
+            text-align: center;
+            border-bottom: 3px solid #6366f1;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 40px;
+            background: #f8fafc;
+        }
+
+        .intro-box {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-left: 4px solid #6366f1;
+            padding: 25px;
+            margin-bottom: 40px;
+            border-radius: 12px;
+        }
+
+        .intro-box h2 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #1e293b;
+        }
+
+        .intro-box p {
+            color: #475569;
+            font-size: 1rem;
+        }
+
+        /* FORMULARIO DE CONTACTO */
+        .contact-section {
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            color: #ffffff;
+            padding: 35px;
+            margin-bottom: 35px;
+            border-radius: 12px;
+            border: 1px solid #334155;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.1);
+        }
+
+        .contact-section h3 {
+            font-size: 1.6rem;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+            background: rgba(255,255,255,0.9);
+            color: #1e293b;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #6366f1;
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+            background: #ffffff;
+        }
+
+        .required {
+            color: #818cf8;
+        }
+
+        /* SECCIONES DEL FORMULARIO */
+        .section {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-left: 4px solid #6366f1;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .section-number {
+            background: linear-gradient(135deg, #6366f1 0%, #818cf8 100%);
+            color: #ffffff;
+            width: 45px;
+            height: 45px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: 700;
+            flex-shrink: 0;
+            box-shadow: 0 4px 10px rgba(99, 102, 241, 0.2);
+        }
+
+        .section-header h3 {
+            font-size: 1.4rem;
+            color: #1e293b;
+            font-weight: 600;
+        }
+
+        .question-group {
+            margin-bottom: 25px;
+        }
+
+        .question-label {
+            display: block;
+            margin-bottom: 12px;
+            font-weight: 600;
+            color: #334155;
+            font-size: 1rem;
+        }
+
+        .radio-group,
+        .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .radio-option,
+        .checkbox-option {
+            display: flex;
+            align-items: center;
+            padding: 12px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            background: #ffffff;
+        }
+
+        .radio-option:hover,
+        .checkbox-option:hover {
+            background: #f1f5f9;
+            border-color: #818cf8;
+            box-shadow: 0 2px 8px rgba(99, 102, 241, 0.1);
+        }
+
+        .radio-option input,
+        .checkbox-option input {
+            width: 20px;
+            height: 20px;
+            margin-right: 12px;
+            cursor: pointer;
+            accent-color: #6366f1;
+        }
+
+        .radio-option label,
+        .checkbox-option label {
+            cursor: pointer;
+            flex: 1;
+            font-size: 0.95rem;
+            color: #475569;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+            resize: vertical;
+            min-height: 100px;
+            background: #ffffff;
+        }
+
+        textarea:focus {
+            outline: none;
+            border-color: #6366f1;
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+        }
+
+        /* BOTÓN DE ENVÍO */
+        .submit-section {
+            text-align: center;
+            margin: 40px 0;
+            padding: 30px;
+            background: #f8fafc;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .btn-submit {
+            background: linear-gradient(135deg, #6366f1 0%, #818cf8 100%);
+            color: #ffffff;
+            padding: 18px 50px;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+        }
+
+        /* PÁGINA DE AGRADECIMIENTO */
+        .thank-you-page {
+            display: none;
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        .thank-you-page.active {
+            display: block;
+        }
+
+        .thank-you-icon {
+            font-size: 5rem;
+            margin-bottom: 20px;
+        }
+
+        .thank-you-page h2 {
+            font-size: 2.5rem;
+            color: #1e293b;
+            margin-bottom: 20px;
+        }
+
+        .gift-box {
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            color: #ffffff;
+            padding: 40px;
+            border-radius: 16px;
+            margin: 30px 0;
+            border: 3px solid #6366f1;
+            box-shadow: 0 8px 30px rgba(99, 102, 241, 0.2);
+        }
+
+        .gift-box h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .gift-box p {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        .contact-info {
+            background: rgba(255,255,255,0.1);
+            padding: 25px;
+            border-radius: 12px;
+            margin-top: 25px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .contact-info a {
+            color: #c7d2fe;
+            text-decoration: none;
+            font-weight: 700;
+            border-bottom: 2px solid #c7d2fe;
+        }
+
+        .contact-info a:hover {
+            color: #ffffff;
+            border-bottom-color: #ffffff;
+        }
+
+        .btn-whatsapp {
+            display: inline-block;
+            background: #25D366;
+            color: #ffffff;
+            padding: 15px 35px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+            border: 2px solid #25D366;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+        }
+
+        .btn-whatsapp:hover {
+            background: #128C7E;
+            border-color: #128C7E;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .header h1 {
+                font-size: 1.8rem;
+            }
+
+            .content {
+                padding: 20px;
+            }
+
+            .section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Diagnóstico de Madurez Digital con IA</h1>
+            <p>Identifica oportunidades de transformación en tu organización</p>
+        </div>
+
+        <div class="content" id="form-content">
+            <div class="intro-box">
+                <h2>¿Está tu empresa aprovechando todo el potencial de la IA?</h2>
+                <p>Completa este diagnóstico estratégico de 5 minutos y descubre qué áreas de tu organización pueden beneficiarse más de la automatización inteligente y la transformación digital. Totalmente confidencial.</p>
+            </div>
+
+            <form id="diagnostic-form">
+                <!-- DATOS DE CONTACTO -->
+                <div class="contact-section">
+                    <h3>📋 Información de Contacto</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Nombre Completo <span class="required">*</span></label>
+                            <input type="text" id="nombre" name="nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Cargo <span class="required">*</span></label>
+                            <input type="text" id="cargo" name="cargo" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Correo Electrónico <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Teléfono/WhatsApp <span class="required">*</span></label>
+                            <input type="tel" id="telefono" name="telefono" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Nombre de la Empresa <span class="required">*</span></label>
+                        <input type="text" id="empresa" name="empresa" required>
+                    </div>
+                </div>
+
+                <!-- SECCIÓN 1: CONTEXTO EMPRESARIAL -->
+                <div class="section">
+                    <div class="section-header">
+                        <div class="section-number">1</div>
+                        <h3>Contexto Empresarial</h3>
+                    </div>
+
+                    <div class="question-group">
+                        <label class="question-label">Tipo de Organización</label>
+                        <div class="radio-group">
+                            <div class="radio-option">
+                                <input type="radio" id="tipo1" name="tipo_org" value="privada" required>
+                                <label for="tipo1">Privada</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="tipo2" name="tipo_org" value="publica">
+                                <label for="tipo2">Pública/Gubernamental</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="tipo3" name="tipo_org" value="mixta">
+                                <label for="tipo3">Mixta</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="tipo4" name="tipo_org" value="ong">
+                                <label for="tipo4">ONG/Sin ánimo de lucro</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question-group" style="grid-column: 1 / -1;">
+                        <label class="question-label">Sector/Industria</label>
+                        <input type="text" id="sector" name="sector" placeholder="Ej: Manufactura, Finanzas, Retail" required style="width: 100%; padding: 15px; font-size: 1.05rem;">
+                    </div>
+
+                    <div class="question-group">
+                        <label class="question-label">Número de Empleados</label>
+                        <div class="radio-group">
+                            <div class="radio-option">
+                                <input type="radio" id="emp1" name="empleados" value="200-500" required>
+                                <label for="emp1">200-500</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="emp2" name="empleados" value="500-1000">
+                                <label for="emp2">500-1000</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="emp3" name="empleados" value="1000-5000">
+                                <label for="emp3">1000-5000</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="emp4" name="empleados" value="+5000">
+                                <label for="emp4">Más de 5000</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question-group">
+                        <label class="question-label">Presencia Geográfica</label>
+                        <div class="radio-group">
+                            <div class="radio-option">
+                                <input type="radio" id="geo1" name="geografia" value="local" required>
+                                <label for="geo1">Local</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="geo2" name="geografia" value="nacional">
+                                <label for="geo2">Nacional</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="geo3" name="geografia" value="internacional">
+                                <label for="geo3">Internacional</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECCIÓN 2: ESTRUCTURA TECNOLÓGICA -->
+                <div class="section">
+                    <div class="section-header">
+                        <div class="section-number">2</div>
+                        <h3>Estructura Tecnológica</h3>
+                    </div>
+
+                    <div class="question-group">
+                        <label class="question-label">¿Tienen departamento de TI?</label>
+                        <div class="radio-group">
+                            <div class="radio-option">
+                                <input type="radio" id="ti1" name="dept_ti" value="+20" required>
+                                <label for="ti1">Sí, con más de 20 personas</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="ti2" name="dept_ti" value="10-20">
+                                <label for="ti2">Sí, entre 10-20 personas</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="ti3" name="dept_ti" value="-10">
+                                <label for="ti3">Sí, menos de 10 personas</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="ti4" name="dept_ti" value="subcontratado">
+                                <label for="ti4">Subcontratado completamente</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question-group">
+                        <label class="question-label">¿Cómo gestionan proyectos de IA?</label>
+                        <div class="radio-group">
+                            <div class="radio-option">
+                                <input type="radio" id="ia1" name="gestion_ia" value="interno_especializado" required>
+                                <label for="ia1">Equipo interno especializado en IA</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="ia2" name="gestion_ia" value="interno_sin_esp">
+                                <label for="ia2">TI interno sin especialización IA</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="ia3" name="gestion_ia" value="consultoras">
+                                <label for="ia3">Consultoras externas</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="ia4" name="gestion_ia" value="no_iniciado">
+                                <label for="ia4">No hemos iniciado</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="ia5" name="gestion_ia" value="mixto">
+                                <label for="ia5">Mixto (interno + externo)</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question-group">
+                        <label class="question-label">Presupuesto anual para tecnología</label>
+                        <div class="radio-group">
+                            <div class="radio-option">
+                                <input type="radio" id="pres1" name="presupuesto" value="-50k" required>
+                                <label for="pres1">Menos de $50,000 USD</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="pres2" name="presupuesto" value="50-200k">
+                                <label for="pres2">$50,000 - $200,000 USD</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="pres3" name="presupuesto" value="200-500k">
+                                <label for="pres3">$200,000 - $500,000 USD</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="pres4" name="presupuesto" value="+500k">
+                                <label for="pres4">Más de $500,000 USD</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECCIÓN 3: MADUREZ DIGITAL -->
+                <div class="section">
+                    <div class="section-header">
+                        <div class="section-number">3</div>
+                        <h3>Madurez Digital</h3>
+                    </div>
+
+                    <div class="question-group">
+                        <label class="question-label">Sistemas empresariales actuales (puede seleccionar varios)</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-option">
+                                <input type="checkbox" id="sys1" name="sistemas" value="erp">
+                                <label for="sys1">ERP (SAP, Oracle, etc.)</label>
+                            </div>
+                            <div class="checkbox-option">
+                                <input type="checkbox" id="sys2" name="sistemas" value="crm">
+                                <label for="sys2">CRM (Salesforce, HubSpot, etc.)</label>
+                            </div>
+                            <div class="checkbox-option">
+                                <input type="checkbox" id="sys3" name="sistemas" value="legacy">
+                                <label for="sys3">Sistemas legacy/propios</label>
+                            </div>
+                            <div class="checkbox-option">
+                                <input type="checkbox" id="sys4" name="sistemas" value="cloud">
+                                <label for="sys4">Herramientas cloud (Google Workspace, Microsoft 365)</label>
+                            </div>
+                            <div class="checkbox-option">
+                                <input type="checkbox" id="sys5" name="sistemas" value="bi">
+                                <label for="sys5">BI/Analytics</label>
+                            </div>
+                            <div class="checkbox-option">
+                                <input type="checkbox" id="sys6" name="sistemas" value="ninguno">
+                                <label for="sys6">Ninguno robusto</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question-group">
+                        <label class="question-label">Nivel de integración entre sistemas</label>
+                        <div class="radio-group">
+                            <div class="radio-option">
+                                <input type="radio" id="int1" name="integracion" value="total" required>
+                                <label for="int1">Totalmente integrados</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="int2" name="integracion" value="parcial">
+                                <label for="int2">Parcialmente integrados</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="int3" name="integracion" value="silos">
+                                <label for="int3">Silos separados</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="int4" name="integracion" value="no_multiple">
+                                <label for="int4">No tenemos múltiples sistemas</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question-group">
+                        <label class="question-label">¿Usan herramientas de automatización? (puede seleccionar varias)</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-option">
+                                <input type="checkbox" id="auto1" name="automatizacion" value="n8n">
+                                <label for="auto1">n8n</label>
+                            </div>
+                            <div class="checkbox-option">
+                                <input type="checkbox" id="auto2" name="automatizacion" value="make">
+                                <label for="auto2">Make (antes Integromat)</label>
+                            </div>
+                            <div class="checkbox-option">
+                                <input type="checkbox" id="auto3" name="automatizacion" value="zapier">
+                                <label for="auto3">Zapier</label>
+                            </div>
+                            <div class="checkbox-option">
+                                <input type="checkbox" id="auto4" name="automatizacion" value="power_automate">
+                                <label for="auto4">Power Automate</label>
+                            </div>
+                            <div class="checkbox-option">
+                                <input type="checkbox" id="auto5" name="automatizacion" value="uipath">
+                                <label for="auto5">UiPath/Automation Anywhere</label>
+                            </div>
+                            <div class="checkbox-option">
+                                <input type="checkbox" id="auto6" name="automatizacion" value="ninguna">
+                                <label for="auto6">Ninguna</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECCIÓN 4: DESAFÍOS ESPECÍFICOS -->
+                <div class="section">
+                    <div class="section-header">
+                        <div class="section-number">4</div>
+                        <h3>Desafíos Específicos</h3>
+                    </div>
+
+                    <div class="question-group">
+                        <label class="question-label">Principal cuello de botella operacional</label>
+                        <textarea id="cuello_botella" name="cuello_botella" placeholder="Describa el principal problema que ralentiza sus operaciones..." required></textarea>
+                    </div>
+
+                    <div class="question-group">
+                        <label class="question-label">Áreas con más procesos manuales (puede seleccionar varias)</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-option">
+                                <input type="checkbox" id="area1" name="areas_manuales" value="atencion_cliente">
+                                <label for="area1">Atención al cliente</label>
+                            </div>
+                            <div class="checkbox-option">
+                                <input type="checkbox" id="area2" name="areas_manuales" value="rrhh">
+                                <label for="area2">Recursos Humanos</label>
+                            </div>
+                            <div class="checkbox-option">
+                                <input type="checkbox" id="area3" name="areas_manuales" value="finanzas">
+                                <label for="area3">Finanzas/Contabilidad</label>
+                            </div>
+                            <div class="checkbox-option">
+                                <input type="checkbox" id="area4" name="areas_manuales" value="ventas">
+                                <label for="area4">Ventas</label>
+                            </div>
+                            <div class="checkbox-option">
+                                <input type="checkbox" id="area5" name="areas_manuales" value="operaciones">
+                                <label for="area5">Operaciones/Producción</label>
+                            </div>
+                            <div class="checkbox-option">
+                                <input type="checkbox" id="area6" name="areas_manuales" value="marketing">
+                                <label for="area6">Marketing</label>
+                            </div>
+                            <div class="checkbox-option">
+                                <input type="checkbox" id="area7" name="areas_manuales" value="logistica">
+                                <label for="area7">Logística</label>
+                            </div>
+                            <div class="checkbox-option">
+                                <input type="checkbox" id="area8" name="areas_manuales" value="legal">
+                                <label for="area8">Legal/Compliance</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question-group">
+                        <label class="question-label">Tiempo promedio perdido en tareas repetitivas</label>
+                        <div class="radio-group">
+                            <div class="radio-option">
+                                <input type="radio" id="tiempo1" name="tiempo_perdido" value="-10h" required>
+                                <label for="tiempo1">Menos de 10 horas/semana</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="tiempo2" name="tiempo_perdido" value="10-30h">
+                                <label for="tiempo2">10-30 horas/semana</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="tiempo3" name="tiempo_perdido" value="30-60h">
+                                <label for="tiempo3">30-60 horas/semana</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="tiempo4" name="tiempo_perdido" value="+60h">
+                                <label for="tiempo4">Más de 60 horas/semana</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECCIÓN 5: VISIÓN DE IA -->
+                <div class="section">
+                    <div class="section-header">
+                        <div class="section-number">5</div>
+                        <h3>Visión de Inteligencia Artificial</h3>
+                    </div>
+
+                    <div class="question-group">
+                        <label class="question-label">¿Qué cree que es la IA hoy? (máximo 200 caracteres)</label>
+                        <textarea id="definicion_ia" name="definicion_ia" maxlength="200" placeholder="Comparta su percepción sobre qué es la Inteligencia Artificial..." required style="min-height: 80px;"></textarea>
+                    </div>
+
+                    <div class="question-group">
+                        <label class="question-label">¿Han implementado algo de IA?</label>
+                        <div class="radio-group">
+                            <div class="radio-option">
+                                <input type="radio" id="impl1" name="implementacion_ia" value="produccion" required>
+                                <label for="impl1">Sí, múltiples proyectos en producción</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="impl2" name="implementacion_ia" value="pilotos">
+                                <label for="impl2">Sí, pilotos o pruebas</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="impl3" name="implementacion_ia" value="evaluando">
+                                <label for="impl3">No, pero lo estamos evaluando</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="impl4" name="implementacion_ia" value="no_sabemos">
+                                <label for="impl4">No, no sabemos por dónde empezar</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question-group">
+                        <label class="question-label">Si la IA pudiera hacer CUALQUIER cosa por su empresa, ¿qué le gustaría que hiciera?</label>
+                        <textarea id="vision_ideal" name="vision_ideal" placeholder="Describa su escenario ideal sin limitaciones..." required></textarea>
+                    </div>
+
+                    <div class="question-group">
+                        <label class="question-label">Principal preocupación sobre implementar IA</label>
+                        <div class="radio-group">
+                            <div class="radio-option">
+                                <input type="radio" id="preo1" name="preocupacion" value="costo" required>
+                                <label for="preo1">Costo</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="preo2" name="preocupacion" value="complejidad">
+                                <label for="preo2">Complejidad técnica</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="preo3" name="preocupacion" value="resistencia">
+                                <label for="preo3">Resistencia del equipo</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="preo4" name="preocupacion" value="seguridad">
+                                <label for="preo4">Seguridad de datos</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="preo5" name="preocupacion" value="desconocimiento">
+                                <label for="preo5">No sabemos qué es posible</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="preo6" name="preocupacion" value="roi">
+                                <label for="preo6">ROI poco claro</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECCIÓN 6: CAPACIDAD DE EJECUCIÓN -->
+                <div class="section">
+                    <div class="section-header">
+                        <div class="section-number">6</div>
+                        <h3>Capacidad de Ejecución</h3>
+                    </div>
+
+                    <div class="question-group">
+                        <label class="question-label">Plazo esperado de implementación</label>
+                        <div class="radio-group">
+                            <div class="radio-option">
+                                <input type="radio" id="plazo1" name="plazo" value="1-3m" required>
+                                <label for="plazo1">Inmediato (1-3 meses)</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="plazo2" name="plazo" value="3-6m">
+                                <label for="plazo2">Corto plazo (3-6 meses)</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="plazo3" name="plazo" value="6-12m">
+                                <label for="plazo3">Mediano plazo (6-12 meses)</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="plazo4" name="plazo" value="+12m">
+                                <label for="plazo4">Largo plazo (+12 meses)</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question-group">
+                        <label class="question-label">Modelo preferido</label>
+                        <div class="radio-group">
+                            <div class="radio-option">
+                                <input type="radio" id="mod1" name="modelo" value="interno" required>
+                                <label for="mod1">Desarrollar capacidad interna</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="mod2" name="modelo" value="externo">
+                                <label for="mod2">Subcontratar todo</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="mod3" name="modelo" value="hibrido">
+                                <label for="mod3">Híbrido (implementación externa, operación interna)</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BOTÓN DE ENVÍO -->
+                <div class="submit-section">
+                    <button type="submit" class="btn-submit">Enviar Diagnóstico</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- PÁGINA DE AGRADECIMIENTO -->
+        <div class="thank-you-page" id="thank-you">
+            <h2>Gracias por completar el diagnóstico</h2>
+            
+            <div class="gift-box">
+                <h3>Sesión de Diagnóstico Personalizado</h3>
+                <p>Como agradecimiento por completar este test, le brindaremos sin costo una sesión de 30 minutos con nuestros expertos especializados en Inteligencia Artificial para diagnosticar oportunidades específicas en su organización.</p>
+                <p>Nuestro equipo se pondrá en contacto desde <strong>manuel@startti.co</strong> en las próximas 48 horas para coordinar la sesión según su disponibilidad.</p>
+                
+                <div class="contact-info">
+                    <p style="font-size: 1.2rem; margin-bottom: 15px;"><strong>¿Necesita atención prioritaria?</strong></p>
+                    <p style="font-size: 1rem; margin-bottom: 15px;">Puede contactarnos directamente vía WhatsApp al +57 301 787 2595</p>
+                    <a href="https://wa.me/573017872595?text=Hola%2C%20completé%20el%20diagnóstico%20de%20transformación%20digital%20para%20empresas%20y%20requiero%20información%20sobre%20la%20sesión%20de%20diagnóstico" class="btn-whatsapp" target="_blank">
+                        Contactar por WhatsApp
+                    </a>
+                </div>
+
+                <p style="margin-top: 30px; font-size: 0.95rem; opacity: 0.9; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 20px;">
+                    <strong>Nota:</strong> Si por algún motivo no puede utilizar esta sesión, puede transferirla a un colega de su organización. Contáctenos para coordinar la transferencia.
+                </p>
+            </div>
+
+            <p style="color: #666; margin-top: 30px; font-size: 1rem;">
+                Recibirá un correo de confirmación con los detalles de su diagnóstico.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('diagnostic-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Recopilar todos los datos del formulario
+            const formData = new FormData(this);
+            const data = {
+                timestamp: new Date().toISOString(),
+                tipo_formulario: 'Empresas Grandes'
+            };
+            
+            // Convertir FormData a objeto
+            for (let [key, value] of formData.entries()) {
+                if (data[key]) {
+                    // Si la clave ya existe, convertir en array
+                    if (!Array.isArray(data[key])) {
+                        data[key] = [data[key]];
+                    }
+                    data[key].push(value);
+                } else {
+                    data[key] = value;
+                }
+            }
+
+            // Aquí enviarías los datos a Google Sheets
+            console.log('Datos del formulario:', data);
+            
+            // Enviar a Google Sheets - PEGA AQUÍ TU URL DE APPS SCRIPT
+            fetch('PEGA_AQUI_TU_URL_DE_APPS_SCRIPT', {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(() => {
+                console.log('✅ Datos enviados correctamente');
+            })
+            .catch(error => {
+                console.error('❌ Error:', error);
+            });
+
+            // Mostrar página de agradecimiento
+            document.getElementById('form-content').style.display = 'none';
+            document.getElementById('thank-you').classList.add('active');
+            
+            // Scroll al inicio
+            window.scrollTo(0, 0);
+        });
+    </script>
+</body>
+</html>
