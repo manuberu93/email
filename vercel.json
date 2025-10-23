@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/test-empresa",
+      "dest": "/test-empresa.html"
+    },
+    {
+      "src": "/pyme",
+      "dest": "/pyme.html"
+    }
+  ]
+}
