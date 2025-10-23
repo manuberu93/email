@@ -11,12 +11,42 @@
   ],
   "routes": [
     {
+      "src": "/test-empresa.html",
+      "dest": "/test-empresa.html"
+    },
+    {
       "src": "/test-empresa",
       "dest": "/test-empresa.html"
     },
     {
+      "src": "/pyme.html",
+      "dest": "/pyme.html"
+    },
+    {
       "src": "/pyme",
       "dest": "/pyme.html"
+    },
+    {
+      "src": "/test-pyme.html",
+      "dest": "/test-pyme.html"
+    },
+    {
+      "src": "/test-pyme",
+      "dest": "/test-pyme.html"
+    },
+    {
+      "src": "/calculatorRoi.html",
+      "dest": "/calculatorRoi.html"
+    },
+    {
+      "src": "/calculatorRoi",
+      "dest": "/calculatorRoi.html"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/$1"
     }
-  ]
+  ],
+  "cleanUrls": true,
+  "trailingSlash": false
 }

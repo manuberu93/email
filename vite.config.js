@@ -9,8 +9,7 @@ export default defineConfig({
         pyme: resolve(__dirname, 'pyme.html'),
         empresa: resolve(__dirname, 'test-empresa.html'),
         testPyme: resolve(__dirname, 'test-pyme.html'),
-        calculator: resolve(__dirname, 'calculatorRoi.html'),
-        navegacion: resolve(__dirname, 'navegacion.html')
+        calculator: resolve(__dirname, 'calculatorRoi.html')
       }
     }
   }
